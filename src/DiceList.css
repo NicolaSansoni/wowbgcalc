@@ -1,0 +1,55 @@
+.DiceList {
+    border: solid;
+    z-index: 1;
+}
+
+.DiceList-buttons {
+    display: inline-block;
+}
+
+.DiceList-buttons button {
+    display: block;
+    width: 2em;
+    height: 2em;
+    color: white;
+    font-weight: bold;
+}
+
+.DiceList ul {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.DiceList li {
+    display: inline-block;
+}
+
+.DiceList.blue {
+    background-color: #006;
+}
+
+.DiceList.red {
+    background-color: #600;
+}
+
+.DiceList.green {
+    background-color: #060;
+}
+
+.blue button {
+    background-color: #00a;
+}
+
+.red button {
+    background-color: #a00;
+}
+
+.green button {
+    background-color: #0a0;
+}
+
+.black button {
+    background-color: #000;
+}

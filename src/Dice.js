@@ -1,26 +1,15 @@
-import React from "react"
+class Dice {
 
-class Dice extends React.Component {
-    
-    constructor(props) {
-        super(props)
-        this.state = {
-            value:0
-        }
-    }
-
-    render() {
-        return (
-            <div className="Dice">
-                Dice: {this.props.value}
-            </div>
-        );
+    constructor(color, value = 0) {
+        this.color = color
+        this.value = value
+        this.faces = 8
     }
 
     roll() {
-        let value = Math.ceil( Math.random() * 8 )
-        this.setState( {value: value} )
+        let value = Math.ceil( Math.random() * this.faces )
+        this.value = value
     }
 }
 
-export default Dice
+export default Dice 

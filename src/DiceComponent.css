@@ -1,0 +1,20 @@
+.Dice {
+    display: inline-block;
+    color: white;
+    width: 1.5em;
+    height: 100%;
+    border: 1px solid white;
+    margin: 2px;
+}
+
+.blue {
+    background-color: #00a;
+}
+
+.red {
+    background-color: #a00;
+}
+
+.green {
+    background-color: #0a0;
+}

@@ -1,31 +1,37 @@
 import React from "react"
-import DiceButtons from "./DiceButtons"
 import Dice from "./Dice"
+import DiceComponent from "./DiceComponent"
+import './DiceList.css'
 
 class DiceList extends React.Component {
     
     constructor(props) {
         super(props)
+        let color = "black"
+        if ('color' in this.props) {
+            color = this.props.color
+        }
         this.state = {
             list: Array(0),
             amount: 0,
+            color: color
         }
     }
 
     render() {
+        const diceList = this.state.list.map( (x) => 
+            <li key={x.toString()}>
+                <DiceComponent dice={x}/>
+            </li> 
+        )
         return (
-            <div className="DiceList">
-                <DiceButtons
-                    onClickPlus = { () => this.addDice()}
-                    onClickMinus = { () => this.removeDice()}
-                />
-                <ul>
-                    { this.state.list.map( (x) => 
-                        <li>
-                        <Dice value={x}/>
-                        </li> 
-                    )}
-                </ul>
+            <div className={"DiceList " + this.state.color}>
+                <div className="DiceList-buttons">
+                    <button onClick={ () => this.addDice() }> + </button>
+                    <button onClick={ () => this.removeDice() }> - </button>
+                </div>
+
+                <ul>{diceList}</ul>
             </div>
         );
     }
@@ -37,7 +43,7 @@ class DiceList extends React.Component {
         }
         let newAmount = this.state.amount + 1;
         const newList = this.state.list.slice()
-        newList.push(newAmount)
+        newList.push(new Dice(this.state.color, newAmount))
         this.setState({
             list: newList,
             amount: newAmount,

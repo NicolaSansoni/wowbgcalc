@@ -5,9 +5,9 @@ import DiceList from './DiceList'
 function App() {
   return (
     <div className="App">
-      <DiceList/>
-      <DiceList/>
-      <DiceList/>
+      <DiceList color="blue"/>
+      <DiceList color="red"/>
+      <DiceList color="green"/>
     </div>
   );
 }
