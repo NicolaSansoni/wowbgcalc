@@ -1,6 +1,7 @@
 import React from "react"
 
 class Dice extends React.Component {
+    
     constructor(props) {
         super(props)
         this.state = {
@@ -8,17 +9,17 @@ class Dice extends React.Component {
         }
     }
 
-    roll() {
-        let value = Math.ceil( Math.random() * 8 )
-        this.setState( {value: value} )
-    }
-
     render() {
         return (
             <div className="Dice">
-                Dice: {this.state.value}
+                Dice: {this.props.value}
             </div>
         );
+    }
+
+    roll() {
+        let value = Math.ceil( Math.random() * 8 )
+        this.setState( {value: value} )
     }
 }
 

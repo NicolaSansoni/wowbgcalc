@@ -1,8 +1,8 @@
 function DiceButtons(props) {
     return (
         <div>
-            <button>+</button>
-            <button>-</button>
+            <button onClick={ () => props.onClickPlus() }>+</button>
+            <button onClick={ () => props.onClickMinus() }>-</button>
         </div>
     )
 }
