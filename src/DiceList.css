@@ -1,25 +1,24 @@
 .DiceList {
-    border: solid;
     z-index: 1;
-}
-
-.DiceList-buttons {
-    display: inline-block;
+    display: flex;
+    align-items: center;
+    padding: 2px;
 }
 
 .DiceList-buttons button {
+    font-size: inherit;
     display: block;
-    width: 2em;
-    height: 2em;
+    min-width: 36pt;
+    min-height: 24pt;
     color: white;
-    font-weight: bold;
+    border: solid 1px black;
+    margin: 1pt;
 }
 
 .DiceList ul {
     display: inline-block;
-    margin: 0;
+    margin: 0 16pt;
     padding: 0;
-    height: 100%;
 }
 
 .DiceList li {
@@ -52,4 +51,20 @@
 
 .black button {
     background-color: #000;
+}
+
+.blue button:active {
+    background-color: #006;
+}
+
+.red button:active {
+    background-color: #600;
+}
+
+.green button:active {
+    background-color: #060;
+}
+
+.black button:active {
+    background-color: #555;
 }

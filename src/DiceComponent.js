@@ -1,5 +1,4 @@
 import React from "react"
-import Dice from "./Dice"
 import "./DiceComponent.css"
 
 function DiceComponent(props) {

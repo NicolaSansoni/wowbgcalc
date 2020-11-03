@@ -1,10 +1,31 @@
 .App {
-  text-align: center;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  background-color: #555;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    background-color: #333;
+}
+
+.App-page {
+    max-width: 800pt;
+    width: 100%;
+    padding: 8pt;
+    box-sizing: border-box;
+}
+
+#roll {
+
+    display: block;
+    font-size: inherit;
+    margin: 8pt auto;
+    padding: 0 2em;
+    background-color: #aaa;
+    border: 1px solid black;
+}
+
+#roll:active {
+    box-shadow: inset;
+    background-color: #666;
 }
