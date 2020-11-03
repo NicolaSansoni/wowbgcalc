@@ -1,18 +1,19 @@
 ## RIASSUNTO
-Progetto personale per rendere la fase di combattimento nel gioco da tavolo di World of Warcraft più veloce.
+Personal project to speed up the combat phase of World of Warcraft's tabletop game.
 
-Per adesso l'unica funzione è quella di tirare i dadi e di ordinarli in ordine decrescente in modo da renderne immediata la valutazione.
+For now the implemented functions are rolling the dice and selecting some to be rolled again in the Extra Roll phase.
 
-I dadi sono ad 8 facce.
+The results of the rolls are in descending order.
+
+Dice are 8 faced.
 
 ## TODO:
-- Selezionare i dadi per il _Nuovo Tiro_
-- Calcolare automaticamente i danni inserendo la _Minaccia_ e l'_Attacco_ dell'avversario
-- Aggiungere gestione della _Salute_ e dell'_Energia_ del Giocatore e della _Salute_ dell'avvesario
-- Gestire battaglie con più di 1 Giocatore
-- Lista dei possibili avversari e gestirne gli effetti
-- Lista delle _Abilità_ e degli _Oggetti_ del Giocatore
-- Creazione del Giocatore e gestione automatica delle abilità
-- Aggiungere un copyright in cui si specifica che se i detentori dei diritti di World of Warcraft o del gioco da tavolo vogliono che modifichi o rimuova l'applicazione mi possono contattare prima di denunciarmi, ma non ce n'è bisogno sino a quando non aggiungo i nomi e (possibilmente) le immagini delle varie carte. Per il resto chiunque voglia usare questo codice è libero di farci quello che vuole, anche se non vedo il perché copiare da qui.
+- Calculate damages based on the _Threat_ and the _Attack_ values of the Opponent
+- Add _Health_ and _Energy_ management for the Player and the Opponent
+- Manage battles with >1 Player
+- Opponent's list with stats and abilities
+- List of _Items_ and _Abilities_ of the Players
+- Player's character creation and automatic ability's management
+- Add a copyright were is specified that if the owners of the rights for World of Warcraft or for it's tabletop game want me to modify or delete this application they are invited to contact me before suing, but there's no need until I add the names and (maybe) the pictures for the various cards. With that said anyone else is free to use this code to do whatever they want with it, but I have no idea why they would even want to copy from here.
 
 ### Autore: Nicola Sansoni

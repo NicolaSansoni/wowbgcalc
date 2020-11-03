@@ -49,10 +49,6 @@
     background-color: #0a0;
 }
 
-.black button {
-    background-color: #000;
-}
-
 .blue button:active {
     background-color: #006;
 }
@@ -65,6 +61,6 @@
     background-color: #060;
 }
 
-.black button:active {
+button:disabled {
     background-color: #555;
 }

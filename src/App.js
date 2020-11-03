@@ -11,11 +11,17 @@ class App extends React.Component {
         this.state = {
             listBlue: { list: Array(0), color: 'blue' },
             listRed: { list: Array(0), color: 'red' },
-            listGreen: { list: Array(0), color: 'green' }
+            listGreen: { list: Array(0), color: 'green' },
+            listReroll: { list: Array(0) }
         }
     }
 
     render() {
+        let rerollStyle = {visibility: 'visible'}
+        if (this.state.listReroll.list.length === 0) {
+            rerollStyle = {visibility: 'hidden'}
+        }
+
         return (
             <div className="App">
                 <div className="App-page">
@@ -23,18 +29,26 @@ class App extends React.Component {
                         items={this.state.listBlue}
                         addDice={() => this.addDice(this.state.listBlue)}
                         removeDice={() => this.removeDice(this.state.listBlue)}
+                        onDiceClick={(dice) => this.selectDice(dice)}
                     />
                     <DiceList
                         items={this.state.listRed}
                         addDice={() => this.addDice(this.state.listRed)}
                         removeDice={() => this.removeDice(this.state.listRed)}
+                        onDiceClick={(dice) => this.selectDice(dice)}
                     />
                     <DiceList
                         items={this.state.listGreen}
                         addDice={() => this.addDice(this.state.listGreen)}
                         removeDice={() => this.removeDice(this.state.listGreen)}
+                        onDiceClick={(dice) => this.selectDice(dice)}
                     />
-                    <button id="roll" onClick={ () => this.roll()}> roll </button>
+                    <button id="roll" onClick={ () => this.roll()}> Tira i dadi </button>
+                    <DiceList
+                        items={this.state.listReroll}
+                        onDiceClick={(dice) => this.deselectDice(dice)}
+                    />
+                    <button id="roll" onClick={ () => this.reroll()} style={rerollStyle}> Nuovo Tiro </button>
                 </div>
             </div>
         )
@@ -44,7 +58,7 @@ class App extends React.Component {
     addDice(coloredList) {
         let len = coloredList.list.length
         if (len === 7) {
-            alert("lista piena!")
+            console.log("lista piena!")
             return
         }
         const newList = {list: coloredList.list.slice(), color: coloredList.color}
@@ -69,7 +83,7 @@ class App extends React.Component {
     removeDice(coloredList) {
         let len = coloredList.list.length
         if (len === 0) {
-            alert("lista vuota!")
+            console.log("lista vuota!")
             return
         }
         const newList = {list: coloredList.list.slice(), color: coloredList.color}
@@ -100,6 +114,7 @@ class App extends React.Component {
         for (let list of lists) {
             for (let dice of list) {
                 dice.roll()
+                dice.isSelected = false 
             }
 
             //SORTING FOR EASIER UNDERSTANDING
@@ -109,7 +124,64 @@ class App extends React.Component {
         newState.listBlue.list = lists[0]
         newState.listRed.list = lists[1]
         newState.listGreen.list = lists[2]
+        newState.listReroll.list = Array(0)
         
+        this.setState(newState)
+
+    }
+
+    reroll() {
+        let list = this.state.listReroll.list.slice()
+        console.log(list)
+        for (let dice of list) {
+            dice.roll()
+        }
+
+        list.sort( Dice.compare )
+
+        let newState = Object.assign({}, this.state)
+        newState.listReroll.list = list
+        this.setState(newState)
+    }
+
+    selectDice(dice) {
+        if (dice.isSelected) {
+            return
+        }
+        let diceCopy = Object.assign(new Dice(), dice)
+        let list = this.state.listReroll.list.slice()
+        list.push(diceCopy)
+        list.sort( Dice.compare )
+        
+        dice.isSelected = true
+
+        let newState = Object.assign({}, this.state)
+        newState.listReroll.list = list
+        this.setState(newState)
+    }
+
+    deselectDice(dice) {
+        let found = false
+        let lists = [
+            this.state.listBlue.list.slice(), 
+            this.state.listRed.list.slice(),
+            this.state.listGreen.list.slice()
+        ]
+        for (let list of lists) {
+            for (let d of list) {
+                if (d.id === dice.id) {
+                    found = true
+                    if (!d.isSelected) alert("Il programmatore non è capace pt2 :'(")
+                    d.isSelected = false
+                }
+            }
+        }
+        if (!found) alert("Il programmatore non è capace :'(")
+
+        let list = this.state.listReroll.list.filter((d)=> d !== dice)
+
+        let newState = Object.assign({}, this.state)
+        newState.listReroll.list = list
         this.setState(newState)
     }
 }

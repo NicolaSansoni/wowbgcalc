@@ -6,6 +6,7 @@
     border-radius: 10%;
     margin: 2pt;
     text-align: center;
+    user-select: none;
 }
 
 .blue {
@@ -18,4 +19,8 @@
 
 .green {
     background-color: #0a0;
+}
+
+.disabled {
+    background-color: #555 !important;
 }
