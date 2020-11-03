@@ -1,5 +1,5 @@
 import React from "react"
-import DiceComponent from "./DiceComponent"
+import DieComponent from "./DieComponent"
 import './DiceList.css'
 
 function DiceList(props) {
@@ -9,7 +9,7 @@ function DiceList(props) {
 
     const diceList = props.items.list.map((x) =>
         <li key={x.id}>
-            <DiceComponent dice={x} onClick={() => props.onDiceClick(x)}/>
+            <DieComponent die={x} onClick={() => props.onDieClick(x)}/>
         </li>
     )
 
@@ -17,8 +17,8 @@ function DiceList(props) {
         if ('color' in props.items) {
             return (
                 <div className="DiceList-buttons">
-                    <button onClick={() => props.addDice()} disabled={props.items.list.length === 7}> + </button>
-                    <button onClick={() => props.removeDice()} disabled={props.items.list.length === 0}> - </button>
+                    <button onClick={() => props.addDie()} disabled={props.items.list.length === 7}> + </button>
+                    <button onClick={() => props.removeDie()} disabled={props.items.list.length === 0}> - </button>
                 </div>
             )
         }

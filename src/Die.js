@@ -1,9 +1,9 @@
-class Dice {
+class Die {
 
     static _count = 0;
     static _generateId() {
-        Dice._count++
-        return Dice._count - 1
+        Die._count++
+        return Die._count - 1
     }
     static compare(a, b) {
         let evalColor = (col) => {
@@ -28,8 +28,9 @@ class Dice {
         this.color = color
         this.value = value
         this.faces = 8
-        this.id = Dice._generateId()
+        this.id = Die._generateId()
         this.isSelected = false
+        this.isHit = false
     }
 
     roll() {
@@ -38,4 +39,4 @@ class Dice {
     }
 }
 
-export default Dice 
+export default Die 
