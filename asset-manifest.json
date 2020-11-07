@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/wowbgcalc/static/css/main.e0002e2d.chunk.css",
-    "main.js": "/wowbgcalc/static/js/main.32488ca2.chunk.js",
-    "main.js.map": "/wowbgcalc/static/js/main.32488ca2.chunk.js.map",
+    "main.css": "/wowbgcalc/static/css/main.c2a11c4d.chunk.css",
+    "main.js": "/wowbgcalc/static/js/main.c0eb529e.chunk.js",
+    "main.js.map": "/wowbgcalc/static/js/main.c0eb529e.chunk.js.map",
     "runtime-main.js": "/wowbgcalc/static/js/runtime-main.94def245.js",
     "runtime-main.js.map": "/wowbgcalc/static/js/runtime-main.94def245.js.map",
     "static/js/2.918ca131.chunk.js": "/wowbgcalc/static/js/2.918ca131.chunk.js",
@@ -10,13 +10,13 @@
     "static/js/3.0f9f7e02.chunk.js": "/wowbgcalc/static/js/3.0f9f7e02.chunk.js",
     "static/js/3.0f9f7e02.chunk.js.map": "/wowbgcalc/static/js/3.0f9f7e02.chunk.js.map",
     "index.html": "/wowbgcalc/index.html",
-    "static/css/main.e0002e2d.chunk.css.map": "/wowbgcalc/static/css/main.e0002e2d.chunk.css.map",
+    "static/css/main.c2a11c4d.chunk.css.map": "/wowbgcalc/static/css/main.c2a11c4d.chunk.css.map",
     "static/js/2.918ca131.chunk.js.LICENSE.txt": "/wowbgcalc/static/js/2.918ca131.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.94def245.js",
     "static/js/2.918ca131.chunk.js",
-    "static/css/main.e0002e2d.chunk.css",
-    "static/js/main.32488ca2.chunk.js"
+    "static/css/main.c2a11c4d.chunk.css",
+    "static/js/main.c0eb529e.chunk.js"
   ]
 }
