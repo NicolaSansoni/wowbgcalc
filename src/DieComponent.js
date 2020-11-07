@@ -9,8 +9,12 @@ function DieComponent(props) {
         attributes += ' glow'
     }
 
+    if (props.isRolling) {
+        attributes += ' roll'
+    }
+
     return (
-        <div className={"Die" + attributes} onClick={()=> props.onClick()}>
+        <div className={"Die" + attributes} onClick={()=> props.onClick()} onAnimationEnd={props.stopRolling}>
             {props.die.value}
         </div>
     )

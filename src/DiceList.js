@@ -18,7 +18,7 @@ function DiceList(props) {
             <ul>
                 {props.items.map((x) =>
                     <li key={x.id}>
-                        <DieComponent die={x} onClick={() => props.onDieClick(x)}/>
+                        <DieComponent die={x} onClick={() => props.onDieClick(x)} isRolling={props.isRolling} stopRolling={props.stopRolling}/>
                     </li>
                 )}
             </ul>

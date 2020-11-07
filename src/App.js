@@ -43,17 +43,22 @@ class App extends React.Component {
                                     removeDie={() => this.removeDie(x)}
                                     onDieClick={(die) => this.selectDie(die)}
                                     color={color}
+                                    isRolling={this.state.rollCount > 0}
+                                    stopRolling={()=>this.setState(Object.assign(this.state, {rollCount: this.state.rollCount-1}))}
                                 />
                             )
                         })}
                         <button className="rollbtn" onClick={() => this.roll()}> Tira i dadi </button>
                     </div>
 
+                    {/* REROLL LIST ONLY SHOWN WHEN THERE ARE DICE INSIDE */}
                     {this.state.listReroll.length > 0 &&
                         <div className="App-reroll">
                             <DiceList
                                 items={this.state.listReroll}
                                 onDieClick={(die) => this.deselectDie(die)}
+                                isRolling={this.state.rerollCount > 0}
+                                stopRolling={()=>this.setState(Object.assign(this.state, {rerollCount: this.state.rerollCount-1}))}
                             />
                             <button className="rollbtn" onClick={() => this.reroll()}> Nuovo Tiro </button>
                         </div>
@@ -98,13 +103,14 @@ class App extends React.Component {
             }
 
             //SORTING FOR EASIER UNDERSTANDING
-            // list.sort((a, b) => b.value - a.value)
+            list.sort((a, b) => b.value - a.value)
         }
         let newState = { ...this.state }
         newState.listBlue = lists[0]
         newState.listRed = lists[1]
         newState.listGreen = lists[2]
         newState.listReroll = Array(0)
+        newState.rollCount = lists.flat().length
 
         this.setState(newState)
 
@@ -116,11 +122,12 @@ class App extends React.Component {
         for (let die of list) {
             die.roll()
         }
-
+        
         list.sort(Die.compare)
-
+        
         let newState = {...this.state}
         newState.listReroll = list
+        newState.rerollCount = list.length
         this.setState(newState)
 
         this.checkThreat(this.state.threat)
