@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/wowbgcalc/static/css/main.e0002e2d.chunk.css",
-    "main.js": "/wowbgcalc/static/js/main.d9172447.chunk.js",
-    "main.js.map": "/wowbgcalc/static/js/main.d9172447.chunk.js.map",
+    "main.js": "/wowbgcalc/static/js/main.32488ca2.chunk.js",
+    "main.js.map": "/wowbgcalc/static/js/main.32488ca2.chunk.js.map",
     "runtime-main.js": "/wowbgcalc/static/js/runtime-main.94def245.js",
     "runtime-main.js.map": "/wowbgcalc/static/js/runtime-main.94def245.js.map",
     "static/js/2.918ca131.chunk.js": "/wowbgcalc/static/js/2.918ca131.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.94def245.js",
     "static/js/2.918ca131.chunk.js",
     "static/css/main.e0002e2d.chunk.css",
-    "static/js/main.d9172447.chunk.js"
+    "static/js/main.32488ca2.chunk.js"
   ]
 }
