@@ -12,12 +12,12 @@
     min-height: 24pt;
     color: white;
     border: solid 1px black;
-    margin: 1pt;
+    margin: 1pt 16pt 1pt 1pt;
 }
 
 .DiceList ul {
     display: inline-block;
-    margin: 0 16pt;
+    margin: 0;
     padding: 0;
 }
 

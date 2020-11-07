@@ -10,6 +10,9 @@
 }
 
 .App-page {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
     max-width: 800pt;
     width: 100%;
     padding: 8pt;
@@ -42,4 +45,10 @@ input {
     background-color: #555;
     width: 2em;
     border: 1px solid #111;
+}
+
+p {
+    margin-top: auto;
+    font-size: calc(8px + 2vmin);
+    font-style: italic;
 }

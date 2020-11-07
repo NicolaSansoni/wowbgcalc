@@ -63,6 +63,11 @@ class App extends React.Component {
                             <button className="rollbtn" onClick={() => this.reroll()}> Nuovo Tiro </button>
                         </div>
                     }
+                    <p>
+                        Per aggiungere dadi al <b>Nuovo Tiro</b> toccali. <br/>
+                        Per rimuovere dadi dal <b>Nuovo Tiro</b> toccali prima di ritirarli. <br/>
+                        Quando <b>Tiri i dadi</b> la coda del <b>Nuovo Tiro</b> si svuota da sola. <br/>
+                    </p>
                 </div>
             </div>
         )
