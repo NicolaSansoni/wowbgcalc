@@ -1,7 +1,7 @@
 .Die {
     color: white;
-    width: 1.5em;
-    height: 100%;
+    width: 1.4em;
+    font-size: calc(14px + 2vmin);
     border: 1px solid white;
     border-radius: 10%;
     margin: 2pt;
