@@ -44,7 +44,7 @@ class App extends React.Component {
                                     onDieClick={(die) => this.selectDie(die)}
                                     color={color}
                                     isRolling={this.state.rollCount > 0}
-                                    stopRolling={()=>this.setState(Object.assign(this.state, {rollCount: this.state.rollCount-1}))}
+                                    stopRolling={()=>this.setState(Object.assign(this.state, {rollCount: 0}))}
                                 />
                             )
                         })}
@@ -58,7 +58,7 @@ class App extends React.Component {
                                 items={this.state.listReroll}
                                 onDieClick={(die) => this.deselectDie(die)}
                                 isRolling={this.state.rerollCount > 0}
-                                stopRolling={()=>this.setState(Object.assign(this.state, {rerollCount: this.state.rerollCount-1}))}
+                                stopRolling={()=>this.setState(Object.assign(this.state, {rerollCount: 0}))}
                             />
                             <button className="rollbtn" onClick={() => this.reroll()}> Nuovo Tiro </button>
                         </div>
