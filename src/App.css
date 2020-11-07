@@ -16,7 +16,7 @@
     box-sizing: border-box;
 }
 
-#roll {
+.rollbtn {
 
     display: block;
     font-size: inherit;
@@ -26,8 +26,7 @@
     border: 1px solid black;
 }
 
-#roll:active {
-    box-shadow: inset;
+.rollbtn:active {
     background-color: #666;
 }
 

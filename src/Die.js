@@ -1,4 +1,9 @@
 class Die {
+    static Colors = {
+        BLUE: 'blue',
+        RED: 'red',
+        GREEN: 'green'
+    }
 
     static _count = 0;
     static _generateId() {
@@ -8,11 +13,11 @@ class Die {
     static compare(a, b) {
         let evalColor = (col) => {
             switch (col) {
-                case 'blue':
+                case Die.Colors.BLUE:
                     return 0
-                case 'red':
+                case Die.Colors.RED:
                     return 1
-                case 'green':
+                case Die.Colors.GREEN:
                     return 2
                 default:
                     throw new Error("Die has no color!")
