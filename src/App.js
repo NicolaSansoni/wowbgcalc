@@ -2,6 +2,7 @@ import './App.css';
 import React from 'react'
 import Die from "./Die"
 import DiceList from './DiceList'
+import Observable from './Observable'
 
 class App extends React.Component {
 
@@ -12,7 +13,9 @@ class App extends React.Component {
             listBlue: Array(0),
             listRed: Array(0),
             listGreen: Array(0),
-            listReroll: Array(0)
+            listReroll: Array(0),
+            rollEvent: new Observable(),
+            rerollEvent: new Observable(),
         }
     }
 
@@ -43,12 +46,11 @@ class App extends React.Component {
                                     removeDie={() => this.removeDie(x)}
                                     onDieClick={(die) => this.selectDie(die)}
                                     color={color}
-                                    isRolling={this.state.rollCount > 0}
-                                    stopRolling={()=>this.setState(Object.assign(this.state, {rollCount: 0}))}
+                                    rollEvent={this.state.rollEvent}
                                 />
                             )
                         })}
-                        <button className="rollbtn" onClick={() => this.roll()}> Tira i dadi </button>
+                        <button className="rollbtn" onClick={() => {this.roll(); this.state.rollEvent.notify()}}> Tira i dadi </button>
                     </div>
 
                     {/* REROLL LIST ONLY SHOWN WHEN THERE ARE DICE INSIDE */}
@@ -57,10 +59,9 @@ class App extends React.Component {
                             <DiceList
                                 items={this.state.listReroll}
                                 onDieClick={(die) => this.deselectDie(die)}
-                                isRolling={this.state.rerollCount > 0}
-                                stopRolling={()=>this.setState(Object.assign(this.state, {rerollCount: 0}))}
+                                rollEvent={this.state.rerollEvent}
                             />
-                            <button className="rollbtn" onClick={() => this.reroll()}> Nuovo Tiro </button>
+                            <button className="rollbtn" onClick={() => {this.reroll(); this.state.rerollEvent.notify()}}> Nuovo Tiro </button>
                         </div>
                     }
                     <p>
@@ -115,7 +116,6 @@ class App extends React.Component {
         newState.listRed = lists[1]
         newState.listGreen = lists[2]
         newState.listReroll = Array(0)
-        newState.rollCount = lists.flat().length
 
         this.setState(newState)
 
@@ -132,7 +132,6 @@ class App extends React.Component {
         
         let newState = {...this.state}
         newState.listReroll = list
-        newState.rerollCount = list.length
         this.setState(newState)
 
         this.checkThreat(this.state.threat)

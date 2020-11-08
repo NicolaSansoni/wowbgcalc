@@ -43,5 +43,5 @@
 }
 
 .roll {
-    animation: roll 1s;
+    animation: roll .6s;
 }

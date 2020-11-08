@@ -1,7 +1,17 @@
-import React from "react"
+import React, { useEffect, useRef, useState } from "react"
 import "./DieComponent.css"
 
 function DieComponent(props) {
+    let [isRolling, setIsRolling] = useState(false)
+    let ref = useRef()
+
+    useEffect( () => {
+        props.rollEvent.subscribe( ref, () => {
+            setIsRolling(true)
+        })
+        return () => props.rollEvent.unsubscribe(ref)
+    })
+
     let attributes = ' ' + props.die.color
     if (props.die.isSelected) {
         attributes += ' disabled'
@@ -9,12 +19,12 @@ function DieComponent(props) {
         attributes += ' glow'
     }
 
-    if (props.isRolling) {
+    if (isRolling) {
         attributes += ' roll'
     }
 
     return (
-        <div className={"Die" + attributes} onClick={()=> props.onClick()} onAnimationEnd={props.stopRolling}>
+        <div ref={ref} className={"Die" + attributes} onClick={()=> props.onClick()} onAnimationEnd={() => setIsRolling(false)}>
             {props.die.value}
         </div>
     )
