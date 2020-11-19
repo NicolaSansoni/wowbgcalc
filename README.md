@@ -17,6 +17,5 @@ I dadi brillano se superano il livello di _Minaccia_.
 - Lista dei possibili avversari e gestirne gli effetti
 - Lista delle _Abilità_ e degli _Oggetti_ del Giocatore
 - Creazione del Giocatore e gestione automatica delle abilità
-- Aggiungere un copyright in cui si specifica che se i detentori dei diritti di World of Warcraft o del gioco da tavolo vogliono che modifichi o rimuova l'applicazione mi possono contattare prima di denunciarmi, ma non ce n'è bisogno sino a quando non aggiungo i nomi e (possibilmente) le immagini delle varie carte. Per il resto chiunque voglia usare questo codice è libero di farci quello che vuole, anche se non vedo il perché copiare da qui.
 
 ### Autore: Nicola Sansoni
